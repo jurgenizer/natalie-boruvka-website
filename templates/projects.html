@@ -5,8 +5,7 @@
 <main class="container-fluid">
   <h1>Portfolio</h1>
   <div class="parent">
-
-    {% for project in this.children %}
+    {% for project in this.children.filter(F._model == 'project') %}
     <div>
 
       {% set image = project.attachments.images.first() %}

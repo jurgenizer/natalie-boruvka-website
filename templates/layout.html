@@ -19,7 +19,12 @@
   <!-- Nav -->
   <nav class="container-fluid">
     <ul>
-      <li><a href="./" class="contrast" onclick="event.preventDefault()"><strong>Natalie Boruvka</strong></a></li>
+      <li>
+        <a href="{{ '/'|url }}">
+          <img src="{{ '/static/blueberry-white-400x400.png'|url }}" width="60" height="600">
+        </a>
+      </li>
+      <li><a href="{{ '/'|url }}" class="contrast" onclick="event.preventDefault()"><h4>Natalie Boruvka</h4></a></li>
     </ul>
     <ul>
       <li{% if this._path=='/' %} class="navbar-item" {% endif %}><a href="{{ '/'|url }}">Portfolio</a></li>
@@ -35,8 +40,8 @@
 
   <!-- Main -->
   <main class="container">
-      {% block body %}
-      {% endblock %}
+    {% block body %}
+    {% endblock %}
   </main><!-- ./ Main -->
 
   <!-- Footer -->

@@ -4,9 +4,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@800&display=swap");
 :root {
   --font-family: "Open Sans", sans-serif;
-  --border-radius: 0;
-  --form-element-spacing-vertical: 1rem;
-  --form-element-spacing-horizontal: 1.25rem;
+  --line-height: 1.5;
+  --font-weight: 400;
+
+  --border-radius: 0.25rem;
+  --border-width: 1px;
+  --outline-width: 3px;
+  --spacing: 1rem;
+  --typography-spacing-vertical: 1.5rem;
+  --border-radius: 0.25rem;
+
 }
 
 h1,
@@ -21,28 +28,31 @@ h6 {
 
 h1 {
   --font-size: 2.5rem;
-  --typography-spacing-vertical: 2.5rem;
+  --typography-spacing-vertical: 2.0rem;
 }
 
 h2 {
   --font-size: 2rem;
-  --typography-spacing-vertical: 2rem;
+  --typography-spacing-vertical: 1.5rem;
 }
 
 h3 {
   --font-size: 1.75rem;
-  --typography-spacing-vertical: 1.75rem;
+  --typography-spacing-vertical: 1.25rem;
 }
 
 h4 {
   --font-size: 1.5rem;
-  --typography-spacing-vertical: 1.5rem;
+  --typography-spacing-vertical: 0rem;
 }
 
 h5 {
   --font-size: 1.25rem;
-  --typography-spacing-vertical: 1.25rem;
+  --typography-spacing-vertical: 0.75rem;
 }
+
+
+
 
 button,
 input[type=submit],
@@ -323,7 +333,6 @@ a[role=button] {
   --icon-invalid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(183, 28, 28, 0.999)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cline x1='12' y1='8' x2='12' y2='12'%3E%3C/line%3E%3Cline x1='12' y1='16' x2='12.01' y2='16'%3E%3C/line%3E%3C/svg%3E");
 }
 
-/*# sourceMappingURL=custom.css.map */
 
 /*Jurgen's grid, thank you to https://cssgrid-generator.netlify.app/*/
 .parent {
