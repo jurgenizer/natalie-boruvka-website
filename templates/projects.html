@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block title %}Projects{% endblock %}
+{% block body %}
+<!-- Main -->
+<main class="container-fluid">
+  <h1>Portfolio</h1>
+  <div class="grid">
+
+    {% for project in this.children %}
+    <div>
+      {% set image = project.attachments.images.first() %}
+      {% if image %}
+      <a href="{{ project|url }}">
+        <img src="{{ image.thumbnail(640)|url }}" alt="">
+        {% endif %}
+      </a>
+      <a href="{{ project|url }}">{{ project.name }}</a>
+    </div>
+    {% endfor %}
+  </div>
+
+</main><!-- ./ Main -->
+{% endblock %}

@@ -1,0 +1,9 @@
+_model: projects
+---
+_template: projects.html
+---
+title: Portfolio
+---
+body: Click on image to open PDF
+
+

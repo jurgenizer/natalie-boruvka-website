@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+{% block title %}{{ this.name }}{% endblock %}
+{% block body %}
+
+<!-- Main -->
+<main class="container-fluid">
+
+  {% set documents = this.attachments.documents.all() %}
+  {% set images = this.attachments.images.all() %}
+
+  <article class="grid">
+    <div>
+      <hgroup>
+ <h1>{{this.name}}</h1>
+        <p>{{ this.description }}</p>
+        {% if images %}
+        {% for image in images %}
+        <figure class="container">
+          <img src="{{ image|url }}" alt="Photo showing the aricle {{ this.name }}">
+        </figure>
+        {% endfor %}
+        {% endif %}
+
+        <figcaption>{{ this.publication }}
+          {% if this.website %}
+          <a href="{{ this.website }}">({{ this.website.host }})</a>
+          {% endif %}
+        </figcaption>
+
+        {% if documents %}
+        {% for document in documents %}<p>
+        <a href="{{document._id}}" target="_blank" role="button"> Download pdf</a></p>
+        {% endfor %}
+        {% endif %}
+
+      </hgroup>
+    </div>
+  </article>
+</main><!-- ./ Main -->
+
+{% endblock %}

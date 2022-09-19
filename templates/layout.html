@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description"
+  content="A small portfolio of my published work. I source content, co-ordinate and style photo shoots and compile product editorials." />
+<meta name="keywords"
+  content="interior photography, home staging, styling, editorial content, writing, interior design">
+
+<!-- Pico.css -->
+<link rel="stylesheet" href="{{ '/static/pico.css'|url }}">
+
+<!-- Custom template-->
+<link rel="stylesheet" href="{{ '/static/custom.css'|url }}">
+
+<title>{% block title %}Natalie Boruvka{% endblock %}</title>
+
+<body>
+  <!-- Nav -->
+  <nav class="container-fluid">
+    <ul>
+      <li><a href="./" class="contrast" onclick="event.preventDefault()"><strong>Natalie Boruvka</strong></a></li>
+    </ul>
+    <ul>
+      <li{% if this._path=='/' %} class="navbar-item" {% endif %}><a href="{{ '/'|url }}">Portfolio</a></li>
+        {% for href, title in [
+        ['/about', 'About'],
+        ['/contact', 'Contact']
+        ] %}
+        <li{% if this.is_child_of(href) %} class="navbar-item" {% endif %}><a href="{{ href|url }}">{{ title }}</a>
+          </li>
+          {% endfor %}
+    </ul>
+  </nav><!-- ./ Nav -->
+
+  <!-- Main -->
+  <main class="container">
+      {% block body %}
+      {% endblock %}
+  </main><!-- ./ Main -->
+
+  <!-- Footer -->
+  <footer class="container">
+    <small>&copy; Copyright 2022 Natalie Boruvka</small>
+  </footer><!-- ./ Footer -->
+
+</body>
