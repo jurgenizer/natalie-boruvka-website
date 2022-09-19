@@ -5,10 +5,17 @@
 <main class="container">
   <article class="grid">
     <div>
-      <hgroup>
+ 
         <h1>{{this.title}}</h1>
         <p>{{ this.body }}</p>
-      </hgroup>
+      </div>
+      <div>
+        {% set images = this.attachments.images.all() %}
+        {% set image = this.attachments.images.first() %}
+        {% if image %}
+        <img src="{{ image.thumbnail(640)|url }}" class="hero" alt="Natalie">
+          {% endif %}
+
     </div>
   </article>
 </main><!-- ./ Main -->
