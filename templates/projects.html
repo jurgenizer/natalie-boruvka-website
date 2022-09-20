@@ -3,23 +3,27 @@
 {% block body %}
 <!-- Main -->
 <main class="container-fluid">
-  <h1>Portfolio</h1>
-  <div class="parent">
-    {% for project in this.children.filter(F._model == 'project') %}
-    <div>
 
-      {% set image = project.attachments.images.first() %}
-      {% if image %}
-      <a href="{{ project|url }}">
-        <img src="{{ image.thumbnail(800)|url }}" alt="">
-        {% endif %}
-      </a>
-      <a href="{{ project|url }}">{{ project.name }}</a>
-
+  <h2>Portfolio</h2>
+  <div class="container text-center">
+    {% for project_row in this.children | batch(2) %}
+    <div class="row">
+      {% for project in project_row %}
+      <div class="project col-md-6">
+        <a href="{{ project|url }}">
+          {% if project.cover_image %}
+          {% set image = project.attachments.get(project.cover_image) %}
+          <div class="frame">
+            <img src="{{ image.thumbnail(800)|url }}" width="100%" alt="">
+          </div>
+          <h6>{{ project.name }}</h6>
+          {% endif %}
+        </a>
+      </div>
+      {% endfor %}
     </div>
     {% endfor %}
   </div>
-
 
 </main><!-- ./ Main -->
 {% endblock %}

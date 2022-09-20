@@ -4,10 +4,9 @@ _template: contact.html
 ---
 title: Contact
 ---
-body:
-
+body: 
 Phone: +27 (72) 606 9392
 
-<a href="mailto:natalieboruvka@gmail.com" role="button" class="contrast">Email <img src="/static/email-white.svg" width="24" height="24"></a>
-<a href="https://www.instagram.com/vignette.sa/" role="button" class="contrast">Instagram <img src="/static/instagram-white.svg" width="23" height="23"></a>
+<a href="mailto:natalieboruvka@gmail.com" role="button" class="primary">Email <img src="/static/email-white.svg" width="24" height="24"></a>
+<a href="https://www.instagram.com/vignette.sa/" role="button" class="Primary">Instagram <img src="/static/instagram-white.svg" width="23" height="23"></a>
 ---

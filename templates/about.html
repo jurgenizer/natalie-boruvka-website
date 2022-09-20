@@ -3,22 +3,21 @@
 
 <!-- Main -->
 <main class="container">
-  <article class="grid">
-    <div>
- 
-        <h1>{{this.title}}</h1>
+  <article>
+    <div class="row">
+      <div class="col-md-8">
+        <h2>{{this.title}}</h2>
         <p>{{ this.body }}</p>
       </div>
-      <div>
+      <div class="col-md-4">
         {% set images = this.attachments.images.all() %}
         {% set image = this.attachments.images.first() %}
         {% if image %}
         <img src="{{ image.thumbnail(640)|url }}" class="hero" alt="Natalie">
-          {% endif %}
-
+        {% endif %}
+      </div>
     </div>
   </article>
 </main><!-- ./ Main -->
-
 
 {% endblock %}

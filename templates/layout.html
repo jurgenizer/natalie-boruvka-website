@@ -8,12 +8,18 @@
   content="interior photography, home staging, styling, editorial content, writing, interior design">
 
 <!-- Pico.css -->
-<link rel="stylesheet" href="{{ '/static/pico.css'|url }}">
-
-<!-- Custom template-->
-<link rel="stylesheet" href="{{ '/static/custom.css'|url }}">
+<link rel="stylesheet" href="{{ '/static/pico-bootstrap-grid.css'|url }}">
 
 <title>{% block title %}Natalie Boruvka{% endblock %}</title>
+
+<!-- Favicon thank you https://realfavicongenerator.net-->
+<link rel="apple-touch-icon" sizes="180x180" href="{{ '/static/apple-touch-icon.png'|url }}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ '/static/favicon-32x32.png'|url }}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ '/static/favicon-16x16.png'|url }}">
+<link rel="manifest" href="{{ '/static/site.webmanifest'|url }}">
+<link rel="mask-icon" href="{{ '/static/safari-pinned-tab.svg'|url }}" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
 
 <body>
   <!-- Nav -->
@@ -21,10 +27,9 @@
     <ul>
       <li>
         <a href="{{ '/'|url }}">
-          <img src="{{ '/static/blueberry-white-400x400.png'|url }}" width="60" height="600">
+          <img src="{{ '/static/natalie-boruvka-logo.svg'|url }}" width="286" height="70">
         </a>
       </li>
-      <li><a href="{{ '/'|url }}" class="contrast" onclick="event.preventDefault()"><h4>Natalie Boruvka</h4></a></li>
     </ul>
     <ul>
       <li{% if this._path=='/' %} class="navbar-item" {% endif %}><a href="{{ '/'|url }}">Portfolio</a></li>
