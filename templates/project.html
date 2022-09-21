@@ -17,7 +17,10 @@
       {% if images %}
       {% for image in images %}
       <figure class="container">
-        <img src="{{ image|url }}" alt="Photo showing the aricle {{ this.name }}">
+        <!--TODO fine-tune responsive image sizes-->
+        <img src="{{ image | imagessrcjpg }}" width="{{ image | firstwidth }}" height="{{ image | firstheight }}"
+          srcset="{{ image | imagessrcsetjpg }}" alt="Photo showing the aricle {{ this.name }}" />
+        <!--<img src="{{ image|url }}" alt="Photo showing the aricle {{ this.name }}">-->
       </figure>
       {% endfor %}
       {% endif %}
