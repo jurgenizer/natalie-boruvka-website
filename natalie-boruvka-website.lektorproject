@@ -1,2 +1,6 @@
 [project]
 name = natalie-boruvka-website
+
+[packages]
+lektor-image-resize = 1.0.0
+lektor-image-filter = 3.0

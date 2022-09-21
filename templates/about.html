@@ -14,7 +14,9 @@
         {% set images = this.attachments.images.all() %}
         {% set image = this.attachments.images.first() %}
         {% if image %}
-        <img src="{{ image.thumbnail(640)|url }}" class="hero" alt="Natalie">
+           <!--TODO fine-tune responsive image sizes-->
+           <img src="{{ image | imagessrcjpg }}" width="{{ image | firstwidth }}" height="{{ image | firstheight }}"
+           srcset="{{ image | imagessrcsetjpg }}" alt="Natalie" />
         {% endif %}
       </div>
     </div>

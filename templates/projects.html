@@ -15,8 +15,9 @@
           {% if project.cover_image %}
           {% set image = project.attachments.get(project.cover_image) %}
           <div class="frame">
-            <!--TODO make these thumnails correct sizes for each CSS breakpoint-->
-            <img src="{{ image.thumbnail(1070)|url }}" width="100%" alt="">
+            <!--TODO fine-tune responsive image sizes-->
+            <img src="{{ image | imagessrcjpg }}" width="{{ image | firstwidth }}" height="{{ image | firstheight }}"
+              srcset="{{ image | imagessrcsetjpg }}" />
           </div>
           <h6>{{ project.name }}</h6>
           {% endif %}
