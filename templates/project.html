@@ -14,13 +14,12 @@
       <h2>{{this.name}}</h2>
       <p>{{ this.description }}</p>
 
-      {% if this.cover_image %}
-      {% set image = this.cover_image %}
-      <div class="container-fluid">
-        <!--TODO fine-tune responsive image sizes-->
-        <img src="{{ image | imagessrcjpg }}" width="100%" height="{{ image | firstheight }}"
-          srcset="{{ image | imagessrcsetjpg }}" alt="Photo showing the article {{ this.name }}" />
-      </div>
+      {% if images %}
+      {% for image in images %}
+      <figure class="container">
+        <img src="{{ image.thumbnail(2000, quality=100)|url }}" width="100%" alt="Photo showing the article {{ this.name }}">
+      </figure>
+      {% endfor %}
       {% endif %}
       
       <figcaption>
