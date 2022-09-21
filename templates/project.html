@@ -9,22 +9,20 @@
   {% set images = this.attachments.images.all() %}
 
   <article class="grid">
-    <div>
+    <div class="row">
 
       <h2>{{this.name}}</h2>
       <p>{{ this.description }}</p>
 
-      {% if images %}
-      {% for image in images %}
-      <figure class="container">
+      {% if this.cover_image %}
+      {% set image = this.cover_image %}
+      <div class="container-fluid">
         <!--TODO fine-tune responsive image sizes-->
-        <img src="{{ image | imagessrcjpg }}" width="{{ image | firstwidth }}" height="{{ image | firstheight }}"
-          srcset="{{ image | imagessrcsetjpg }}" alt="Photo showing the aricle {{ this.name }}" />
-        <!--<img src="{{ image|url }}" alt="Photo showing the aricle {{ this.name }}">-->
-      </figure>
-      {% endfor %}
+        <img src="{{ image | imagessrcjpg }}" width="100%" height="{{ image | firstheight }}"
+          srcset="{{ image | imagessrcsetjpg }}" alt="Photo showing the article {{ this.name }}" />
+      </div>
       {% endif %}
-
+      
       <figcaption>
         {{ this.publication }}
         {% if this.website %}
